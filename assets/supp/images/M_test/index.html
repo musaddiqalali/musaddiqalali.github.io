@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Webcam Recording and Slideshow Demo</title>
+    <style>
+      #slideshow {
+        display: none;
+        width: 640px;
+        height: 480px;
+      }
+      #slideshow img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="startButton">Start Recording and Slideshow</button>
+    <button id="stopButton" disabled>Stop Recording</button>
+    <div id="slideshow">
+      <img src="images/Image1.jpg">
+      <img src="images/Image2.png">
+      <img src="images/Image3.jpg">
+      <img src="images/Image4.jpeg">
+      <img src="images/Image5.jpg">
+    </div>
+    <video id="recordedVideo" width="740" height="680" autoplay loop></video>
+    <script>
+      let mediaRecorder;
+      let chunks = [];
+      let slideshowInterval;
+      const startButton = document.getElementById('Agree and Start');
+      const stopButton = document.getElementById('Finish');
+      const slideshow = document.getElementById('slideshow');
+      const recordedVideo = document.getElementById('recordedVideo');
+
+      // Hide the slideshow and recorded video initially
+      slideshow.style.display = 'none';
+      recordedVideo.style.display = 'none';
+
+      navigator.mediaDevices.getUserMedia({video: true})
+        .then(function(stream) {
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.ondataavailable = function(e) {
+            chunks.push(e.data);
+          };
+          mediaRecorder.onstop = function(e) {
+            const blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+            chunks = [];
+            chunks = [];
+            const videoURL = window.URL.createObjectURL(blob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = videoURL;
+            downloadLink.download = 'recorded-video.mp4';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+          };
+        });
+
+      startButton.addEventListener('click', function() {
+        mediaRecorder.start();
+        startButton.disabled = true;
+        stopButton.disabled = false;
+        // Show the slideshow after starting recording
+        slideshow.style.display = 'block';
+        // Start the slideshow
+        let currentSlide = 0;
+        const slides = slideshow.getElementsByTagName('img');
+        slides[currentSlide].style.display = 'block';
+        slideshowInterval = setInterval(function() {
+          slides[currentSlide].style.display = 'none';
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].style.display = 'block';
+        }, 5000); // Change slides every 5 seconds
+      });
+
+      stopButton.addEventListener('click', function() {
+        mediaRecorder.stop();
+        startButton.disabled = false;
+        stopButton.disabled = true;
+        // Hide the slideshow after stopping recording
+        slideshow.style.display = 'none';
+        // Stop the slideshow
+        clearInterval(slideshowInterval);
+        const slides = slideshow.getElementsByTagName('img');
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        // Pause the recorded video and hide it
+        recordedVideo.pause();
+        recordedVideo.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
