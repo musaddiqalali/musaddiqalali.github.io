@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Webcam Recording and Slideshow Demo</title>
+    <title>KANSEI DATA MAKER</title>
     <style>
       #slideshow {
         display: none;
@@ -27,13 +27,13 @@
       <img src="./images/Image4.jpeg">
       <img src="./images/Image5.jpg">
     </div>
-    <video id="recordedVideo" width="740" height="680" autoplay loop></video>
+    <video id="recordedVideo" width="640" height="480" autoplay loop></video>
     <script>
       let mediaRecorder;
       let chunks = [];
       let slideshowInterval;
-      const startButton = document.getElementById('Agree and Start');
-      const stopButton = document.getElementById('Finish');
+      const startButton = document.getElementById('startButton');
+      const stopButton = document.getElementById('stopButton');
       const slideshow = document.getElementById('slideshow');
       const recordedVideo = document.getElementById('recordedVideo');
 
@@ -49,7 +49,6 @@
           };
           mediaRecorder.onstop = function(e) {
             const blob = new Blob(chunks, { 'type' : 'video/mp4;' });
-            chunks = [];
             chunks = [];
             const videoURL = window.URL.createObjectURL(blob);
             const downloadLink = document.createElement('a');
@@ -74,7 +73,7 @@
           slides[currentSlide].style.display = 'none';
           currentSlide = (currentSlide + 1) % slides.length;
           slides[currentSlide].style.display = 'block';
-        }, 5000); // Change slides every 5 seconds
+        }, 3000); // Change slides every 3 seconds
       });
 
       stopButton.addEventListener('click', function() {
@@ -89,9 +88,6 @@
         for (let i = 0; i < slides.length; i++) {
           slides[i].style.display = 'none';
         }
-        // Pause the recorded video and hide it
-        recordedVideo.pause();
-        recordedVideo.style.display = 'none';
       });
     </script>
   </body>
