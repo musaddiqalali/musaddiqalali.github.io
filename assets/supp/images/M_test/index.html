@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>KANSEI DATA MAKER</title>
+    <title>Webcam Recording and Slideshow Demo</title>
     <style>
       #slideshow {
         display: none;
@@ -22,10 +22,10 @@
     <button id="stopButton" disabled>Stop Recording</button>
     <div id="slideshow">
       <img src="./images/Image1.jpg">
-       <img src="./images/image2.png">
-       <img src="./images/image3.jpg">
-       <img src="./images/image4.jpeg">
-       <img src="./images/image5.jpg">
+      <img src="./images/image2.png">
+      <img src="./images/image3.jpg">
+      <img src="./images/image4.jpeg">
+      <img src="./images/image5.jpg">
     </div>
     <video id="recordedVideo" width="1280" height="960" autoplay loop></video>
     <script>
@@ -33,12 +33,12 @@
       let chunks = [];
       let slideshowInterval;
       const startButton = document.getElementById('startButton');
-      tartButton.style.width = '150px'; // Set the width to 100 pixels
+	  startButton.style.width = '150px'; // Set the width to 100 pixels
       startButton.style.height = '60px'; // Set the height to 50 pixels
 startButton.style.backgroundColor = 'red';
 startButton.style.marginRight = '50px';
-      const stopButton = document.getElementById('stopButton');
-      stopButton.style.width = '150px'; // Set the width to 100 pixels
+	  const stopButton = document.getElementById('stopButton');
+	  stopButton.style.width = '150px'; // Set the width to 100 pixels
       stopButton.style.height = '60px'; // Set the height to 50 pixels
 stopButton.style.backgroundColor = 'DodgerBlue';
       const slideshow = document.getElementById('slideshow');
@@ -80,7 +80,7 @@ stopButton.style.backgroundColor = 'DodgerBlue';
           slides[currentSlide].style.display = 'none';
           currentSlide = (currentSlide + 1) % slides.length;
           slides[currentSlide].style.display = 'block';
-        }, 4500); // Change slides every 4.5 seconds
+        }, 3000); // Change slides every 3 seconds
       });
 
       stopButton.addEventListener('click', function() {
