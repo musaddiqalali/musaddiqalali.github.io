@@ -1,3 +1,25 @@
+R2 fu
+Comments and Suggestions for Authors
+I have the following remarks to the authors:
+
+1. The paper cites too many references - 58, which are not thoroughly analyzed. Also, for example, in [4-7], [8-17] too many references are put in one place, but without analyzing them in detail.
+
+2. Although the paper emphasizes using the method in an environment with limited resources, primarily space, there is a lack of use and description of the conditions specific to such an environment and the influence of this specificity on the developed method.
+
+3. The mathematical description of the used algorithms is not enough. All the equations are of a general nature and are not sufficient for understanding the solution of the defined task. The equations in lines 202-209 give the impression that they are formally borrowed and have no relation to the problem being solved.
+
+4. How exactly is computer vision used? There is only a general description and no specifics.
+
+5. What is the novelty compared to existing methods?
+
+I believe that the paper needs significant improvement and recommend that it be rejected.
+
+
+Submission Date
+15 August 2024
+
+
+
 R1
 
 
