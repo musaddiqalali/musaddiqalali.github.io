@@ -1,0 +1,44 @@
+R1
+
+
+ported by the results?	(x)	( )	( )	( )
+
+Comments and Suggestions for Authors
+The title is appropriate, clearly reflecting the study focus on additive manufacturing, computer vision, and their combined impact on material efficiency and structural stability. The abstract effectively summarizes the paper, providing a clear overview of the methodology, tools used (e.g., MATLAB, COMSOL), and the significant outcomes, such as material efficiency and structural stability improvements. However, the abstract could be enhanced by briefly mentioning the specific results or the degree of improvement achieved, which would give readers a better sense of the study impact.
+The introduction sets the stage nicely by linking the importance of space exploration with the need for efficient resource utilization, particularly in extraterrestrial environments. The discussion on the challenges of autonomous design and construction in space missions is timely and relevant, as is the focus on topology optimization. The authors effectively argue the need for autonomous, computationally efficient design processes that can operate independently of Earth-based directives. However, the introduction could benefit from a more concise presentation, as it tends to be somewhat verbose, which may detract from the key points being made.
+The literature review is comprehensive, covering the historical development of topology optimization and photogrammetry. It effectively traces the evolution of these fields, linking past advancements to the current study. The review of topology optimization methods is thorough, touching on key contributions from various researchers and outlining the methodologies employed. However, the section could be more critically engaged, offering a clearer distinction between past works and the novel contributions of this study. The review on computer vision and photogrammetry is well-done but could be more closely tied to the specific applications in additive manufacturing and space missions.
+The methodology section is well-structured and detailed. The integration of photogrammetry with topology optimization is well-explained, with a clear outline of the steps involved in the process, from image capture to 3D modeling and optimization. The mathematical formulations provided for both photogrammetry and topology optimization are rigorous and appropriate for the study objectives. The use of MATLAB and COMSOL for algorithm development and finite element analysis is well-justified, given their capabilities in handling complex optimization problems.
+However, the methodology could benefit from a more detailed explanation of the specific parameters used in the optimization process, particularly those that influence the material efficiency and structural stability outcomes. Additionally, a flowchart or diagram summarizing the methodology would help in visualizing the process, making it easier for readers to follow. Please elaborate more on this topic, providing a deeper insight, as shown in [1].
+[1] Abali, B. E., & Barchiesi, E. (2021). Additive manufacturing introduced substructure and computational determination of metamaterials parameters by means of the asymptotic homogenization. Continuum Mechanics and Thermodynamics, 33(4), 993-1009.
+ 
+The results section demonstrates the effectiveness of the proposed method, particularly in achieving significant volume reductions while maintaining structural integrity. The authors present the outcomes clearly, with appropriate use of figures and tables to illustrate the optimized designs. The discussion ties the results back to the objectives, highlighting the efficiency and robustness of the optimization algorithm. However, the section could benefit from a deeper analysis of the results, including a comparison with other optimization methods or benchmarks to contextualize the findings. 
+ 
+More details are needed about the optimization algorithm related to the different strengths of the concrete in tension and compression. Has this aspect been taken into account, and if yes, how?
+The reviewer suggests commenting on this and possibly considering applying the method to some reinforcement for the concrete (as done in [2]) to broaden the paper impact.
+[2] Giorgio, I., Ciallella, A., & Scerrato, D. (2020). A study about the impact of the topological arrangement of fibers on fiber-reinforced composites: some guidelines aiming at the development of new ultra-stiff and ultra-soft metamaterials. International Journal of Solids and Structures, 203, 73-83.
+ 
+The conclusion succinctly summarizes the study contributions, reiterating the importance of the proposed method for space missions and additive manufacturing. The authors successfully convey the potential implications of their work for future research and applications. However, the conclusion could be strengthened by offering specific suggestions for future work or potential improvements to the methodology.
+ 
+The paper is a strong contribution to the field of additive manufacturing and topology optimization, particularly in the context of space exploration. The integration of computer vision with optimization techniques is innovative and well-executed. While the paper is technically sound and well-organized, it could benefit from more critical engagement with the literature, a more concise presentation in the introduction, and deeper analysis in the discussion section.
+The paper is recommended for publication with minor revisions to address the points mentioned above.
+
+Comments on the Quality of English Language
+Overall, the quality of English is fine.
+Submission Date
+15 August 2024
+Date of this review
+25 Aug 2024 11:21:54
+
+
+R2
+
+
+The reviewed manuscript, titled "Optimizing Additive Manufacturing with Computer Vision to Enhance Material Efficiency and Structural Stability," presents an interesting and valuable contribution to the field. The results are compelling and suggest that the proposed methods have significant potential. I would recommend addressing the following minor aspects before it can be considered for publication in Modelling:
+1. Please ensure that the font style and line spacing are consistent throughout the manuscript. 
+2. It would be beneficial to include a schematic diagram or figure that clearly illustrates the research flow and procedures followed.
+3. Please provide a more detailed explanation of the rationale behind the specific design choices depicted in Figure 1.
+4. I suggest rewriting the conclusion to focus more explicitly on the main findings of the study and to discuss any limitations encountered.
+5. It would be highly beneficial to include a dedicated section for an in-depth discussion and comparison with previous studies. This section should highlight how the current work relates to and advances the existing literature.
+
+Submission Date
+15 August 2024
