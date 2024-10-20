@@ -1,3 +1,52 @@
 vv
 https://www.cfd-online.com/Forums/star-ccm/84313-automatically-starting-run.html
+clear all
+clc
+close all
+%% データとプログラムを保存するためのユニークなフォルダを作成します
+ComputerName=getenv('computername');
+myDire = pwd;
+t = datestr(datetime('now','TimeZone','Asia/Seoul','Format','d-MMM-y HH:mm:ss Z'));
+tnew = strrep(t,':','_');
+caseName = append(ComputerName,'_Short_Fiber_',tnew);
+mkdir(append(myDire,'\',caseName));
+fdname = strcat(append(myDire,'\',caseName));
+Version='1';
+%_______________ALALI_____________________________ Make Matlab Buckup 
+FileNameAndLocation=[mfilename(myDire)];
+newbackup=sprintf('%sbackup%s.m',FileNameAndLocation,'_',caseName,Version);
+currentfile=strcat(FileNameAndLocation,'.m');
+copyfile(currentfile,newbackup)% append(myDire,'\',caseName,'\');
+saveDIR=append(myDire,'\',caseName,'\');
+copyfile(newbackup,saveDIR);
+%% データを、名前が「t3」のCSVファイルに準備をして下さい。
+               
+load 't3.csv'
+
+x =reshape (t3(:,2),[sqrt(1600),sqrt(1600)]); %% 要素のX座標
+y =reshape (t3(:,3),[sqrt(1600),sqrt(1600)]);%% 要素のy座標
+
+ tu=reshape (t3(:,4),[sqrt(1600),sqrt(1600)]);
+ tv=reshape (t3(:,5),[sqrt(1600),sqrt(1600)]);
+
+u = tu ;
+v = tv ;
+
+% convert data to grid data 
+m = 40 ; n = 40 ; 
+xi = linspace(min(min(x)),max(max(x)),m) ; 
+yi = linspace(min(min(y)),max(max(y)),n) ; 
+[X,Y] = meshgrid(xi,yi) ; 
+U = griddata(x,y,u,X,Y) ; 
+V = griddata(x,y,v,X,Y) ; 
+
+%% Draw
+figure(1)
+q = quiver(X,Y,U,V,'k');      %% 'k' は黒い線を作成する為
+q.ShowArrowHead = 'off' ;     %% 矢印の先端を削除する為
+axis equal 
+axis off;
+hold off
+flname = strcat(fdname,'\design.','.jpg');
+saveas(gcf, flname, 'jpg');
 
