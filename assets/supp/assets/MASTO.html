@@ -6,70 +6,109 @@
     <title>Optimizing Heat Sinks with MASTO</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 30px auto;
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            color: #0056b3;
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #ff5722;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #ffffff;
+            background-color: #0056b3;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         .nav-buttons {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
         }
         .btn {
-            padding: 10px 20px;
-            background-color: #0056b3;
-            color: #fff;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #ff5722;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
-            text-align: center;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background-color: #004494;
+            background-color: #e64a19;
+        }
+        .banner {
+            background: linear-gradient(135deg, #0056b3, #ff5722);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Optimizing Heat Sinks with MASTO: A Multi-Objective Approach to Heat Dissipation and EMI</h1>
+        <div class="banner">
+            <h1>Optimizing Heat Sinks with MASTO</h1>
+            <p>Discover a Multi-Objective Approach to Heat Dissipation and Low Electromagnetic Interference </p>
+        </div>
         <p>
-            In this study, researchers introduced the Metaheuristic Aided Structural Topology Optimization (MASTO) method, leveraging the YUKI metaheuristic and Optimality Criteria (OC) for optimizing heat sink design in multiphysics applications. This approach addresses the dual challenges of thermal dissipation and electromagnetic interference (EMI) reduction, critical in electronics. By using YUKI to define and refine initial domains, MASTO identifies configurations that effectively balance heat transfer with minimal EMI.
+            Researchers introduced the <span class="highlight">Metaheuristic Aided Structural Topology Optimization (MASTO)</span> method, leveraging the YUKI metaheuristic and Optimality Criteria (OC) for optimizing heat sink design in multiphysics applications. This approach addresses dual challenges: thermal dissipation and electromagnetic interference (EMI) reduction, crucial in electronics. By using YUKI to define and refine initial domains, MASTO identifies configurations that effectively balance heat transfer with minimal EMI.
         </p>
         <h2>Methodology and Novel Contributions</h2>
         <p>
-            The MASTO framework utilizes a two-level optimization. The YUKI algorithm assesses initial layouts for thermal and electromagnetic efficiency, refining starting points for topology optimization with OC. This contrasts traditional single-point methods by embracing the inherent dependency on initial conditions within non-parametric optimizations. The research thus frames initial domain dependency not as a limitation but as an asset, enriching the search for optimal solutions in complex scenarios.
+            The MASTO framework utilizes a two-level optimization. The YUKI algorithm assesses initial layouts for thermal and electromagnetic efficiency, refining starting points for topology optimization with OC. Unlike traditional methods, MASTO embraces the inherent dependency on initial conditions within non-parametric optimizations, reframing initial domain dependency as an asset.
         </p>
         <p>
-            Mathematical modeling includes considerations for heat dissipation via convection, compliance minimization, and VSWR (Voltage Standing Wave Ratio) for EMI control. The 2D topology optimization approach here applies triangular mesh elements for electromagnetic simulations and structured rectangular mesh for heat simulations, with binary element states (solid or void) guiding material allocation.
+            Mathematical modeling includes heat dissipation via convection, compliance minimization, and Voltage Standing Wave Ratio (VSWR) for EMI control. This 2D topology optimization employs triangular mesh elements for electromagnetic simulations and structured rectangular mesh for heat simulations.
         </p>
         <h2>Experimental and Numerical Validation</h2>
         <p>
-            For validation, designs with varying fin configurations—such as 14, 10, and 6-line layouts—underwent computational and experimental testing. Notably, a 6-line configuration achieved exceptional thermal distribution and minimized radiative emissions, as demonstrated by high VSWR values. Thermal imaging further confirmed that the 6-line design performed best in managing temperature distribution across the sink, pointing to enhanced thermal dissipation.
+            Validation was conducted using designs with varying fin configurations—14, 10, and 6-line layouts. Notably, the 6-line configuration achieved exceptional thermal distribution and minimized radiative emissions, as demonstrated by high VSWR values. Thermal imaging confirmed this design’s superior temperature management.
         </p>
         <h2>Results and Implications</h2>
         <p>
-            The study's experimental and theoretical agreement reinforces MASTO's robustness and applicability for real-world multiphysics optimization, providing a promising methodology for electronic cooling applications where both thermal and electromagnetic performance are critical. This work exemplifies how metaheuristics in initial domain configurations can greatly enhance structural optimization, yielding solutions that would be infeasible with traditional methods.
+            The study’s experimental and theoretical agreement highlights MASTO’s robustness for real-world multiphysics optimization. This method offers promising applications in electronic cooling, balancing thermal performance with EMI reduction. Metaheuristics significantly enhance structural optimization by identifying solutions that traditional methods might overlook.
         </p>
         <p>
-            MASTO thus bridges topology optimization with innovative, practical applications, opening doors for more efficient, EMI-sensitive designs in advanced electronics.
+            MASTO bridges topology optimization with practical applications, paving the way for efficient, EMI-sensitive designs in advanced electronics.
         </p>
         <div class="nav-buttons">
-            <a href="MASTO.html" class="btn">Previous Blog</a>
+            <a href="Space1.htm" class="btn">Previous Blog</a>
             <a href="next-blog.html" class="btn">Next Blog</a>
         </div>
     </div>
+    <footer>
+        © 2024 All Rights Reserved | Advanced Engineering Insights
+    </footer>
 </body>
 </html>
